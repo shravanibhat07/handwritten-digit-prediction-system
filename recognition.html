@@ -1,0 +1,64 @@
+
+{% extends 'index.html' %}
+{% block content %}
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Prediction </title>
+</head>
+
+<body>
+
+<form method="POST" action="/recognition/">
+{% csrf_token %}
+
+<h1 align="center">Handwritten Digit Prediction</h1>
+
+<table align="center">
+
+<tr>
+<td>Enter Pixel0:</td>
+<td><input type="text" name="pixel0" value="0"></td>
+</tr>
+
+<tr>
+<td>Enter Pixel1:</td>
+<td><input type="text" name="pixel1" value="0"></td>
+</tr>
+
+<tr>
+<td>Enter Pixel2:</td>
+<td><input type="text" name="pixel2" value="0"></td>
+</tr>
+
+<tr>
+<td>Enter Pixel3:</td>
+<td><input type="text" name="pixel3" value="0"></td>
+</tr>
+
+<tr>
+<td>Enter Pixel4:</td>
+<td><input type="text" name="pixel4" value="0"></td>
+</tr>
+
+<tr>
+<td colspan="2">
+<button type="submit" name="buttonpredict">Predict Digit</button>
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+<h3>{{ result }}</h3>
+</td>
+</tr>
+
+</table>
+
+</form>
+
+</body>
+
+{% endblock %}
